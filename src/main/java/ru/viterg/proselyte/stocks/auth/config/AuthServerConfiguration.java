@@ -31,18 +31,13 @@ import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
 @RequiredArgsConstructor
-//@Import(OAuth2AuthorizationServerConfiguration.class)
 public class AuthServerConfiguration {
 
     @Bean
     @Order(Ordered.HIGHEST_PRECEDENCE)
     public SecurityWebFilterChain authServerSecurityFilterChain(ServerHttpSecurity http) {
-//        OAuth2AuthorizationServerConfiguration.applyDefaultSecurity(http);
-        return http.formLogin(formLogin ->
-                                      formLogin
-                                              .loginPage("/login"))
+        return http.formLogin(formLogin -> formLogin.loginPage("/login"))
                 .oauth2Login(withDefaults())
-//                .oauth2Client(withDefaults())
                 .build();
     }
 
@@ -54,12 +49,9 @@ public class AuthServerConfiguration {
                 .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
                 .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
                 .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
-                //                .redirectUri("http://127.0.0.1:8084/login/oauth2/code/stocks-client-oidc")
-                //                .redirectUri("http://127.0.0.1:8084/authorized")
                 .redirectUri("https://oidcdebugger.com/debug")
                 .redirectUri("https://oauthdebugger.com/debug")
                 .scope(OidcScopes.OPENID)
-                //                .scope("articles.read")
                 .build();
         return new InMemoryRegisteredClientRepository(registeredClient);
     }
