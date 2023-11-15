@@ -4,8 +4,15 @@ spring:
     username: postgres
     password: postgres
 
+okta:
+  oauth2:
+    issuer: https://dev-idf8f8lsphqg7byp.us.auth0.com/
+    client-id: aVFCFA60pZbtuXw0itjqucevYDg9YLWk
+    client-secret: QNzTH_ErtaI-Uc0MS1ltnFCSci9in1vC3xgZYIZpk-5lbuZAgZoZzi1Zg-7w0Qjm
+
 logging:
   level:
     ROOT: INFO
     web: DEBUG
     ru.viterg.proselyte: DEBUG
+    com.auth0.example: TRACE
