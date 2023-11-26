@@ -51,6 +51,7 @@ okta:
     issuer: https://{DOMAIN}/
     client-id: {CLIENT_ID}
     client-secret: {CLIENT_SECRET}
+    audience: {AUDIENCE}
 
 application:
   client:

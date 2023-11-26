@@ -36,9 +36,11 @@ public class SecurityConfiguration {
     @Bean
     public SecurityWebFilterChain securityFilterChain(ServerHttpSecurity http, ServerLogoutHandler logoutHandler) {
         http.authorizeExchange(exchange -> exchange
-                        .pathMatchers("/", "/images/**", "/login").permitAll()
+                        .pathMatchers("/", "/login").permitAll()
                         .anyExchange().authenticated())
                 .oauth2Login(withDefaults())
+                .oauth2ResourceServer(serverSpec -> serverSpec
+                        .jwt(withDefaults()))
                 .logout(logout -> logout
                         .logoutHandler(logoutHandler))
                 .exceptionHandling(eh -> eh

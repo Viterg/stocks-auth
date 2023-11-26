@@ -9,6 +9,7 @@ okta:
     issuer: https://dev-idf8f8lsphqg7byp.us.auth0.com/
     client-id: aVFCFA60pZbtuXw0itjqucevYDg9YLWk
     client-secret: QNzTH_ErtaI-Uc0MS1ltnFCSci9in1vC3xgZYIZpk-5lbuZAgZoZzi1Zg-7w0Qjm
+    audience: https://dev-idf8f8lsphqg7byp.us.auth0.com/api/v2/
 
 logging:
   level:
