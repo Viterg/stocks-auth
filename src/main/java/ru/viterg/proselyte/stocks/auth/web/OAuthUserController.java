@@ -21,6 +21,7 @@ public class OAuthUserController {
 
     @GetMapping("/profile")
     public Mono<String> profile(@AuthenticationPrincipal OidcUser oidcUser) {
+        // TODO there is no oidcUser here
         return Mono.just(claimsToJson(oidcUser.getClaims()));
     }
 

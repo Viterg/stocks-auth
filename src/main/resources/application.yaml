@@ -49,9 +49,9 @@ spring:
 okta:
   oauth2:
     issuer: https://{DOMAIN}/
+    audience: {AUDIENCE}
     client-id: {CLIENT_ID}
     client-secret: {CLIENT_SECRET}
-    audience: {AUDIENCE}
 
 application:
   client:
