@@ -1,13 +1,13 @@
-#spring:
-#  r2dbc:
-#    url: r2dbc:postgresql://localhost:5432/postgres
-#    username: postgres
-#    password: postgres
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
 
 okta:
   oauth2:
     issuer: https://dev-idf8f8lsphqg7byp.us.auth0.com/
-    audience: https://stocks-auth.com/api/
+    audience: https://stocks-auth.com/api
     client-id: 6gIqGWqusOkR0rW7GYE9XkcCI8h0Yqzd
     client-secret: wsOkBjPdhIJ7vCmnsdT2gPcr3-u-7JGEQH3dsIoT54c1g_rVhwqzc4vG7Eu6rQIZ
 

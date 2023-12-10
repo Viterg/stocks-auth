@@ -8,13 +8,13 @@ spring:
     web-application-type: reactive
   application:
     name: stocks-auth
-#  r2dbc:
-#    url: ${POSTGRES_URL}
-#    username: ${POSTGRES_USERNAME}
-#    password: ${POSTGRES_PASSWORD}
-#    pool:
-#      initial-size: 4
-#      max-size: 16
+  r2dbc:
+    url: ${POSTGRES_URL}
+    username: ${POSTGRES_USERNAME}
+    password: ${POSTGRES_PASSWORD}
+    pool:
+      initial-size: 4
+      max-size: 16
   jackson:
     deserialization:
       ADJUST_DATES_TO_CONTEXT_TIME_ZONE: false

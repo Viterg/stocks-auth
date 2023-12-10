@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.oauth2.core.oidc.user.OidcUser;
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
@@ -20,9 +20,8 @@ public class OAuthUserController {
     private final ObjectMapper mapper;
 
     @GetMapping("/profile")
-    public Mono<String> profile(@AuthenticationPrincipal OidcUser oidcUser) {
-        // TODO there is no oidcUser here
-        return Mono.just(claimsToJson(oidcUser.getClaims()));
+    public Mono<String> profile(@AuthenticationPrincipal JwtAuthenticationToken authToken) {
+        return Mono.just(claimsToJson(authToken.getToken().getClaims()));
     }
 
     private String claimsToJson(Map<String, Object> claims) {

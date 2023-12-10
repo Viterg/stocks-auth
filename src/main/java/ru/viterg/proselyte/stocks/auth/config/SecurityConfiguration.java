@@ -20,8 +20,8 @@ public class SecurityConfiguration {
     public SecurityWebFilterChain securityFilterChain(ServerHttpSecurity http) {
         http.authorizeExchange(exchange -> exchange
                         .pathMatchers("/", "/login").permitAll()
+                        .pathMatchers("/stocks").hasAuthority("SCOPE_read:stocks")
                         .anyExchange().authenticated())
-//                .oauth2Login(withDefaults())
                 .oauth2ResourceServer(serverSpec -> serverSpec
                         .jwt(withDefaults()))
                 .exceptionHandling(eh -> eh
