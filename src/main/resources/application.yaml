@@ -8,32 +8,13 @@ spring:
     web-application-type: reactive
   application:
     name: stocks-auth
-#  security:
-#    oauth2:
-#      client:
-#        registration:
-#          stocks-client-oidc:
-#            provider: spring
-#            client-id: stocks-client
-#            client-name: articles-client-oidc
-#            client-secret: secret
-#            scope: openid
-#            authorization-grant-type: authorization_code
-#            redirect-uri: "http://127.0.0.1:8080/login/oauth2/code/{registrationId}"
-#        provider:
-#          spring:
-##            issuer-uri: http://auth-server:9000
-#            authorization-uri: http://localhost:8081/spring-security-oauth-server/oauth/authorize
-#            token-uri: http://localhost:8081/spring-security-oauth-server/oauth/token
-#            user-info-uri: http://localhost:8088/spring-security-oauth-resource/users/extra
-#            user-name-attribute: user_name
-  r2dbc:
-    url: ${POSTGRES_URL}
-    username: ${POSTGRES_USERNAME}
-    password: ${POSTGRES_PASSWORD}
-    pool:
-      initial-size: 4
-      max-size: 16
+#  r2dbc:
+#    url: ${POSTGRES_URL}
+#    username: ${POSTGRES_USERNAME}
+#    password: ${POSTGRES_PASSWORD}
+#    pool:
+#      initial-size: 4
+#      max-size: 16
   jackson:
     deserialization:
       ADJUST_DATES_TO_CONTEXT_TIME_ZONE: false
